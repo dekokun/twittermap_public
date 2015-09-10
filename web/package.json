@@ -1,0 +1,25 @@
+{
+  "name": "twittermap",
+  "version": "0.0.0",
+  "description": "",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-uglify": "^1.2.0",
+    "gulp-watch": "^4.2.4",
+    "licensify": "^2.0.0",
+    "superagent": "^1.2.0",
+    "uglify": "^0.1.5",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "whatwg-fetch": "^0.9.0",
+    "browserify": "^11.0.1"
+  },
+  "dependencies": {
+    "es6-promise": "^3.0.2",
+    "isomorphic-fetch": "^2.1.0",
+    "underscore": "^1.8.3"
+  },
+  "scripts": {
+    "deploy": "aws s3 cp ./ s3://twittermap.dekokun.info --acl public-read --recursive --exclude '.DS_Store' --exclude 'node_modules/*' --exclude 'src/*' --exclude gulpfile.js --exclude '.gitignore' --exclude 'package.json' --region ap-northeast-1"
+  }
+}
